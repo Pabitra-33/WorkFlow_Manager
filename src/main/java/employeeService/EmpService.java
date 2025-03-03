@@ -8,14 +8,14 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.Scanner;
 
-//this package is used to write service(database logic).
+//this package is used to write Service Logic(database logic).
 
 public class EmpService {
 	private static Scanner sc = new Scanner(System.in);
 	private static String url = "jdbc:postgresql://localhost:5432/employeemanagement?user=postgres&password=123";
 	private static Connection con;
 	
-	//static block
+	//static block(as every step needs this, so we have written this inside a static block
 	static {
 		try {
 			Class.forName("org.postgresql.Driver");
