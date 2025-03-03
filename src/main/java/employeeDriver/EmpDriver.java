@@ -1,9 +1,9 @@
 package employeeDriver;
 
 import java.util.Scanner;
+import employeeService.EmpService;//importing the EmpService class from it's package
 
-import employeeService.EmpService;
-
+//implementation class
 public class EmpDriver {
 	public static void main(String[] args) {
 		System.out.println("=========== WELCOME TO EMPLOYEE MANAGEMENT APPLICATION ============");
