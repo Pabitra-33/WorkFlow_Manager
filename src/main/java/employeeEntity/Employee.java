@@ -1,5 +1,6 @@
 package employeeEntity;
 
+//Entity class, contains the properties of a employee
 public class Employee {
 	int id;
 	String name;
