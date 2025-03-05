@@ -1,13 +1,13 @@
 package employeeEntity;
 
-//Entity class, contains the properties of a employee
+//Entity class, contains the properties of a employee to perform operations.
 public class Employee {
 	int id;
 	String name;
 	int age;
 	int salary;
 	
-	//constructor
+	//constructor defined
 	public Employee(int id, String name, int age, int salary) {
 		this.id = id;
 		this.name = name;

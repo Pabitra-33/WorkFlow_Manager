@@ -9,13 +9,13 @@ import java.sql.Statement;
 import java.util.Scanner;
 
 //this package is used to write Service Logic(database logic).
-
 public class EmpService {
 	private static Scanner sc = new Scanner(System.in);
 	private static String url = "jdbc:postgresql://localhost:5432/employeemanagement?user=postgres&password=123";
 	private static Connection con;
 	
-	//static block(as every step needs this, so we have written this inside a static block
+	//static block
+	//as every step needs this, so we have written this inside a static block
 	static {
 		try {
 			Class.forName("org.postgresql.Driver");
@@ -27,7 +27,7 @@ public class EmpService {
 			e.printStackTrace();
 		}
 	}
-	//save method
+	//save method(to register employee)
 	public int save() {
 		int res = 0;
 		System.out.println("Please enter the below details to register:-");
@@ -58,6 +58,7 @@ public class EmpService {
 		return res;
 	}
 	
+	//update employee method
 	public int update() {
 		int res = 0;
 		System.out.print("\nEnter salary which you want to update: ");
@@ -79,6 +80,7 @@ public class EmpService {
 		return res;
 	}
 	
+	//delete employee method
 	public int delete() {
 		int res = 0;
 		System.out.print("Enter employee id, whose data you want to delete: ");
@@ -97,25 +99,27 @@ public class EmpService {
 		return res;
 	}
 	
+	//display or fetchAll method
 	public void fetchAll() {
 		String query = "SELECT * FROM employee";
 		
 		try {
 			Statement stm = con.createStatement();
 			
-			ResultSet rs = stm.executeQuery(query);
+			ResultSet rs = stm.executeQuery(query);//ResultSet is used to perform the select query operation.
 			while(rs.next()) {
-				System.out.println(rs.getInt(1));
-				System.out.println(rs.getString(2));
-				System.out.println(rs.getInt(3));
+				System.out.print(rs.getInt(1)+" ");
+				System.out.print(rs.getString(2)+" ");
+				System.out.print(rs.getInt(3)+" ");
 				System.out.println(rs.getInt(4));
-				System.out.println("============");
+				System.out.print("============\n");
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
 	}
 	
+	//
 	public void exit() {
 		try {
 			con.close();
