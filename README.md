@@ -8,5 +8,5 @@ It streamlines employee data management, automates record-keeping, and ensures s
 ✅ Employee Data Management – Add, update, and delete employee records efficiently.<br>
 ✅ Database Integration – Uses JDBC with PostgreSQL for secure and optimized data handling.<br>
 ✅ Role-Based Access – Manage user roles and permissions for secure access control.<br>
-✅ Search & Filter Options – Easily retrieve employee details with custom queries.
-✅ Scalable & Performance-Oriented – Designed to handle large datasets with optimized queries.
+✅ Search & Filter Options – Easily retrieve employee details with custom queries.<br>
+✅ Scalable & Performance-Oriented – Designed to handle large datasets with optimized queries.<br>
