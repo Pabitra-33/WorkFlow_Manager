@@ -103,8 +103,9 @@ public class EmpService {
 		return res;
 	}
 	
-	//display or fetchAll method
+	//display or fetchAll method to show or get all employees
 	public List<Employee> fetchAll() {
+		//created a list
 		List<Employee> emp = new ArrayList<Employee>();
 		String query = "SELECT * FROM employee";
 		
