@@ -13,7 +13,7 @@ public class EmpDriver {
 		System.out.print("=========== WELCOME TO EMPLOYEE MANAGEMENT APPLICATION ============");
 		
 		boolean flag = true;
-		//until the user press 5to close the application the driver menu will be shown to the user
+		//until the user press 5to close the application the driver menu will be visible to the user
 		while(flag) {
 			System.out.println("\nMENU DETAILS :");
 			System.out.println("~~~~~~~~~~~~~~");
