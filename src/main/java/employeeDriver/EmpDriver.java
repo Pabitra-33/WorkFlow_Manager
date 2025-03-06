@@ -1,6 +1,9 @@
 package employeeDriver;
 
+import java.util.List;
 import java.util.Scanner;
+
+import employeeEntity.Employee;
 //importing the EmpService class from it's package to access there classes
 import employeeService.EmpService;
 
@@ -41,19 +44,30 @@ public class EmpDriver {
 			case 3:
 				int dRes = e1.delete();
 				if(dRes != 0) {
-					System.out.println("Employee Data Deleted Successfully..!✔");
+					System.out.println("Employee Data Deleted Successfully..✔");
 				}else {
 					System.out.println("Employee Data Does not Deleted...✖");
 				}
 				break;
 			case 4:
-				e1.fetchAll();
+				List<Employee> emp = e1.fetchAll();
+				if(emp != null) {
+					for(Employee employee : emp) {
+						System.out.println(employee.id+" "+employee.name+" "+employee.age+" "+employee.salary);
+					}
+					System.out.println("=====================");
+				}
 				System.out.println("All Employees Data Fetched Successfully..!");
 				break;
 			case 5:
-				e1.exit();
+				boolean exitRes = e1.exit();
+				if(exitRes) {
+					System.out.println("Application Closed Successfully. Thank You...💌");
+				}
+				else {
+					System.out.println("Application Not Closed..!");
+				}
 				flag = false;
-				System.out.println("Exiting the application. Thank You..💌:)");
 				sc.close();
 				break;
 			default:

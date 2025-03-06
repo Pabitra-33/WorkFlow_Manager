@@ -6,7 +6,11 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Scanner;
+
+import employeeEntity.Employee;
 
 //this package is used to write Service Logic(database logic).
 public class EmpService {
@@ -100,7 +104,8 @@ public class EmpService {
 	}
 	
 	//display or fetchAll method
-	public void fetchAll() {
+	public List<Employee> fetchAll() {
+		List<Employee> emp = new ArrayList<Employee>();
 		String query = "SELECT * FROM employee";
 		
 		try {
@@ -108,23 +113,29 @@ public class EmpService {
 			
 			ResultSet rs = stm.executeQuery(query);//ResultSet is used to perform the select query operation.
 			while(rs.next()) {
-				System.out.print(rs.getInt(1)+" ");
-				System.out.print(rs.getString(2)+" ");
-				System.out.print(rs.getInt(3)+" ");
-				System.out.println(rs.getInt(4));
-				System.out.print("============\n");
+				int eid = rs.getInt(1);
+				String ename = rs.getString(2);
+			    int eage = rs.getInt(3);
+				int esal = rs.getInt(4);
+				
+				Employee e1 = new Employee(eid, ename, eage, esal);
+				emp.add(e1);
 			}
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return emp;
 	}
 	
 	//
-	public void exit() {
+	public boolean exit() {
+		boolean flag = false;
 		try {
 			con.close();
+			flag = true;
 		} catch (SQLException e) {
 			e.printStackTrace();
 		}
+		return flag;
 	}
 }
